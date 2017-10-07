@@ -40,14 +40,12 @@
       <p>Blip helps you load samples asynchronously, and gives you a simple callback mechanism to ensure that your samples are ready to use.</p>
       <pre>
         <code class="javascript">
-          blip.sampleLoader()
-            .samples({
-              'kick', 'path/to/your/kick_sound.wav',
-              'snare', 'path/to/your/snare_sound.wav',
-              'kazoo', 'path/to/your/kazoo_sound.wav'
+          blip.loadSamples({
+              'kick': 'path/to/your/kick_sound.wav',
+              'snare': 'path/to/your/snare_sound.wav',
+              'kazoo': 'path/to/your/kazoo_sound.wav'
             })
-            .done(callback)
-            .load();
+            .then(callback);
 
           function callback() {
             // now your samples are available
